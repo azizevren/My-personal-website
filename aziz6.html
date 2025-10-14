@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aziz Evren</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /*Tüm Sayfalara uygulanan genel stiller*/
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            /*Satirlar arasindaki bosluk*/
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            /*Sayfayi ortaya hizalar*/
+            padding: 0 20px;
+        }
+
+        nav {
+            /*Navigasyon bölümü*/
+            background-color: #333;
+            padding: 15px 0;
+            position: sticky;
+            /*sayfayi kaydirirken menü en üstte kalir*/
+            top: 0;
+            z-index: 100;
+            /*Menüyü diger elemanlardan üsste tutma sirasi*/
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4caf50;
+        }
+
+        /* HATA 1 FİX: header'a background gradient eklendi */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            /*Kosleri yuvarlar*/
+            transition: background-color 0.3s;
+            /* HATA 2 FİX: "backgrond" -> "background" (yazım hatası) */
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        #about {
+            background-color: white;
+            padding: 60px 0;
+            margin: 40px 0;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        #projects {
+            padding: 60px 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .projects-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .projects-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .projects-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        #contact {
+            background-color: #333;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea {
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+
+            /*Mobil cihazlar icin*/
+            nav ul {
+                flex-direction: column;
+                /* menüyü dikey yapar*/
+                gap: 10px;
+            }
+
+            /* HATA 3 FİX: "headher" -> "header" (yazım hatası) */
+            header h1 {
+                font-size: 32px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* HATA 3 FİX: "headher" -> "header" */
+            header {
+                padding: 50px 0;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            /* HATA 4 FİX: "222px" -> "22px" (çok büyük font) */
+            section h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HATA 5 FİX: href'ler # işareti ile başlıyordu, bazı yerlerde eksikti -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Homepage</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="container">
+            <h1>Aziz Evren</h1>
+            <p>Web Developer & Designer</p>
+            <a href="#contact" class="btn">Contact me</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About</h2>
+            <p>Hello! I'm Aziz Evren, a passionate web developer and designer.
+                I create stunning, responsive web applications using HTML, CSS, and JavaScript.
+                User experience and clean coding are very important to me.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="projects-card">
+                    <h3>E-Commerce Site</h3>
+                    <p>A fully functional e-commerce platform that I created using HTML, CSS and JavaScript.</p>
+                </div>
+
+                <div class="projects-card">
+                    <h3>Blogger applications</h3>
+                    <p>A responsive web application where users can write and share blog posts.</p>
+                </div>
+
+                <div class="projects-card">
+                    <h3>Weather App</h3>
+                    <p>Application that displays real-time weather conditions by pulling data from API.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Would you like to contact me? Fill out the form below!</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Your name" required>
+                <input type="email" placeholder="Your E-mail" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <!-- HATA 6 FİX: "Messeage" -> "Message" (yazım hatası) -->
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Aziz Evren. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
