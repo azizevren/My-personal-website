@@ -20,3 +20,4 @@ A simple **HTML portfolio** created to practice web design and share personal in
 
 ## 🤝 Contributing
 Feedback and suggestions are always welcome!
+<img width="1896" height="910" alt="Screenshot 2025-12-15 094323" src="https://github.com/user-attachments/assets/6a796e97-66d5-404a-b8e2-34837205b5f8" />
