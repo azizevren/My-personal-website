@@ -11,7 +11,7 @@ A simple **HTML portfolio** created to practice web design and share personal in
 1. Open **aziz6.html** in your browser.
 2. (Optional) Rename it to **index.html** to host it on **GitHub Pages**:
    - Go to *Settings → Pages → Source → main branch*.
-   - Your site will appear at `https://azizevren.github.io/My-personal-website/`.
+   - Your site will appear at [https://azizevren.github.io/My-personal-website/].
 
 ## 🗺️ Roadmap
 - [ ] Add CSS for styling
